@@ -47,11 +47,11 @@ class SearcheTableViewCell: UITableViewCell {
         contentView.addSubview(searchTF)
         contentView.addSubview(shtrihButton)
         // nameLabel constaints
-        nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.leftDistance).isActive = true
+        nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.leftDistanceTableView).isActive = true
         nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 35).isActive = true
         // shtrihbutton constraints
         shtrihButton.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 15).isActive = true
-        shtrihButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.leftDistance).isActive = true
+        shtrihButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.leftDistanceTableView).isActive = true
         shtrihButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
         shtrihButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         //// searchTF constaints
@@ -59,8 +59,6 @@ class SearcheTableViewCell: UITableViewCell {
         searchTF.heightAnchor.constraint(equalToConstant: 40).isActive = true
         searchTF.topAnchor.constraint(equalTo: shtrihButton.topAnchor).isActive = true
         searchTF.trailingAnchor.constraint(equalTo: shtrihButton.leadingAnchor, constant: -15).isActive = true
-       
-    
     }
     
     required init?(coder: NSCoder) {

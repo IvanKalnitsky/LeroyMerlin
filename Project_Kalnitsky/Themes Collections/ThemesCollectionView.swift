@@ -9,35 +9,40 @@ import UIKit
 
 class ThemesCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-  
+  private let names = ThemeModel.names
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = Constants.minimumLineSpacing
+        layout.minimumLineSpacing = Constants.themeHorizontalSpacing
         
         super.init(frame: .zero, collectionViewLayout: layout)
         backgroundColor = .white
         delegate = self
         dataSource = self
         translatesAutoresizingMaskIntoConstraints = false
-        
-        // Регистрируем ячейку
-        
+        register(ThemesCollectionViewCell.self, forCellWithReuseIdentifier: ThemesCollectionViewCell.reuseID)
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
     }
  
-    
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return names.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = dequeueReusableCell(withReuseIdentifier: ThemesCollectionViewCell.reuseID, for: indexPath) as! ThemesCollectionViewCell
+        cell.nameLabel.text = names[indexPath.item]
+        if indexPath.item == 0 {
+            cell.setColors()
+            return cell
+        } else {
+            return cell
+        }
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width:  Constants.themeItemWidth ,height: Constants.heightOfThemeCell)
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

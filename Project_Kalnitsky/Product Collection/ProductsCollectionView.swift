@@ -14,7 +14,7 @@ class ProductsCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = Constants.minimumLineSpacing
+        layout.minimumLineSpacing = Constants.productHorizontalSpacing
         
         super.init(frame: .zero, collectionViewLayout: layout)
         backgroundColor = .white
@@ -32,9 +32,6 @@ class ProductsCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
         self.cells = cells
     }
     
-   
-    
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cells.count
     }
@@ -49,7 +46,7 @@ class ProductsCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width:  Constants.itemWidth ,height: Constants.itemHeight )
+        return CGSize(width:  Constants.productItemWidth ,height: Constants.productItemHeight)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

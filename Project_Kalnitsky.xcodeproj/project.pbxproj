@@ -20,6 +20,7 @@
 		8246E61926318F5500FB88A5 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8246E61826318F5400FB88A5 /* SearchTableViewCell.swift */; };
 		8246E6212631BF3E00FB88A5 /* ThemesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8246E6202631BF3E00FB88A5 /* ThemesCollectionViewCell.swift */; };
 		8246E62B2631C04700FB88A5 /* ThemesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8246E62A2631C04700FB88A5 /* ThemesCollectionView.swift */; };
+		8246E63326370A3F00FB88A5 /* ThemesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8246E63226370A3F00FB88A5 /* ThemesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		8246E61826318F5400FB88A5 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8246E6202631BF3E00FB88A5 /* ThemesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesCollectionViewCell.swift; sourceTree = "<group>"; };
 		8246E62A2631C04700FB88A5 /* ThemesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesCollectionView.swift; sourceTree = "<group>"; };
+		8246E63226370A3F00FB88A5 /* ThemesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				8246E61826318F5400FB88A5 /* SearchTableViewCell.swift */,
 				8246E60C262F3DBD00FB88A5 /* ProductTableViewCell.swift */,
+				8246E63226370A3F00FB88A5 /* ThemesTableViewCell.swift */,
 			);
 			path = "Tableview cells";
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				8246E5EA262F253E00FB88A5 /* AppDelegate.swift in Sources */,
 				8246E5EC262F253E00FB88A5 /* SceneDelegate.swift in Sources */,
 				8246E60D262F3DBD00FB88A5 /* ProductTableViewCell.swift in Sources */,
+				8246E63326370A3F00FB88A5 /* ThemesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

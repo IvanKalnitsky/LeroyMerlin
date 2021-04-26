@@ -10,12 +10,15 @@ import UIKit
 
 struct Constants {
   
-    static let minimumLineSpacing: CGFloat = 25
-    static let itemWidth = ((UIScreen.main.bounds.width - (Constants.minimumLineSpacing * 2)) +  leftDistance) / 3
+    static let productHorizontalSpacing: CGFloat = 25
+    static let productItemWidth = ((UIScreen.main.bounds.width - (Constants.productHorizontalSpacing * 2)) +  leftDistanceTableView) / 3
     static let minimumVerticalSpacing: CGFloat = 100
-    static let itemHeight = (UIScreen.main.bounds.height - 2 * minimumVerticalSpacing) / 2
-    static let leftDistance: CGFloat = 15
+    static let productItemHeight = (UIScreen.main.bounds.height - 2 * minimumVerticalSpacing) / 2
+    static let leftDistanceTableView: CGFloat = 15
     static let heightOfSearchCell = (UIScreen.main.bounds.height / 6)
+    static let heightOfThemeCell = (productItemWidth * 2) - 50
+    static let themeHorizontalSpacing: CGFloat = 15
+    static let themeItemWidth = ((UIScreen.main.bounds.width - (Constants.themeHorizontalSpacing * 2)) +  leftDistanceTableView) / 3
 }
 
 struct ProductModel {
@@ -46,6 +49,10 @@ struct ProductModel {
         }
         return products.shuffled()
     }
+}
+
+struct ThemeModel {
+    static var names = ["Каталог","Стройматериалы","Инструменты","Декор","Освещение","Cад"]
 }
 
 struct Categories {

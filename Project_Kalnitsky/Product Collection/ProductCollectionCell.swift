@@ -55,9 +55,9 @@ class ProductCollectionCell: UICollectionViewCell {
         contentView.addSubview(currencyLabel)
         
         // mainImageView constraints
-        mainImageView.topAnchor.constraint(equalTo: topAnchor, constant: 70).isActive = true
-        mainImageView.widthAnchor.constraint(equalToConstant: Constants.itemWidth).isActive = true
-        mainImageView.heightAnchor.constraint(equalToConstant: Constants.itemWidth).isActive = true
+        mainImageView.topAnchor.constraint(equalTo: topAnchor, constant: 60).isActive = true
+        mainImageView.widthAnchor.constraint(equalToConstant: Constants.productItemWidth).isActive = true
+        mainImageView.heightAnchor.constraint(equalToConstant: Constants.productItemWidth).isActive = true
         mainImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
         //pricelabel constraints
@@ -68,13 +68,10 @@ class ProductCollectionCell: UICollectionViewCell {
         currencyLabel.leadingAnchor.constraint(equalTo: priceLabel.trailingAnchor, constant: 5).isActive = true
         currencyLabel.bottomAnchor.constraint(equalTo: priceLabel.bottomAnchor).isActive = true
         
-        
-        // nameLabel constraints
+        //nameLabel constraints
         nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         nameLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 10).isActive = true
-        
-       
         
     }
     

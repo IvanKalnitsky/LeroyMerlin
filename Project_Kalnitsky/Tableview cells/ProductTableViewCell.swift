@@ -25,20 +25,16 @@ class ProductTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(productsCollectonView)
         contentView.addSubview(categoryLabel)
-        
         //productsCollectonView constraint
-        productsCollectonView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.leftDistance).isActive = true
+        productsCollectonView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.leftDistanceTableView).isActive = true
         productsCollectonView.trailingAnchor.constraint(equalTo:trailingAnchor).isActive = true
         productsCollectonView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         productsCollectonView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         // Category label constraint
-        categoryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.leftDistance).isActive = true
+        categoryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.leftDistanceTableView).isActive = true
         categoryLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         categoryLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
-     
-       
     }
-    
     
     func setProducts(cells: [ProductModel]) {
         productsCollectonView.set(cells: cells)
@@ -51,5 +47,4 @@ class ProductTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
