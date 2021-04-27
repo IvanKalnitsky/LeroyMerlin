@@ -11,7 +11,7 @@ class ProductCollectionCell: UICollectionViewCell {
     
     static var reuseID = "ProductCollectionCell"
     
-    let nameLabel: UILabel = {
+    private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14, weight: .light)
         label.textColor = .black
@@ -20,14 +20,14 @@ class ProductCollectionCell: UICollectionViewCell {
         return label
     }()
     
-    let mainImageView: UIImageView = {
+    private let mainImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
-    let priceLabel: UILabel = {
+    private let priceLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
         label.textColor = .black
@@ -35,7 +35,7 @@ class ProductCollectionCell: UICollectionViewCell {
         return label
     }()
     
-    let currencyLabel: UILabel = {
+    private let currencyLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         label.textColor = .black
@@ -44,7 +44,11 @@ class ProductCollectionCell: UICollectionViewCell {
         return label
     }()
     
-    
+    func configure(nameLabelText: String, image: UIImage, priceLabelText: String) {
+        nameLabel.text = nameLabelText
+        mainImageView.image = image
+        priceLabel.text = priceLabelText
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,26 +57,21 @@ class ProductCollectionCell: UICollectionViewCell {
         contentView.addSubview(mainImageView)
         contentView.addSubview(priceLabel)
         contentView.addSubview(currencyLabel)
-        
         // mainImageView constraints
         mainImageView.topAnchor.constraint(equalTo: topAnchor, constant: 60).isActive = true
         mainImageView.widthAnchor.constraint(equalToConstant: Constants.productItemWidth).isActive = true
         mainImageView.heightAnchor.constraint(equalToConstant: Constants.productItemWidth).isActive = true
         mainImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        
         //pricelabel constraints
         priceLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         priceLabel.topAnchor.constraint(equalTo: mainImageView.bottomAnchor).isActive = true
-        
         // currencyLabel constraints
         currencyLabel.leadingAnchor.constraint(equalTo: priceLabel.trailingAnchor, constant: 5).isActive = true
         currencyLabel.bottomAnchor.constraint(equalTo: priceLabel.bottomAnchor).isActive = true
-        
         //nameLabel constraints
         nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         nameLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 10).isActive = true
-        
     }
     
     required init?(coder: NSCoder) {

@@ -46,15 +46,16 @@ class SearcheTableViewCell: UITableViewCell {
         contentView.addSubview(nameLabel)
         contentView.addSubview(searchTF)
         contentView.addSubview(shtrihButton)
-        // nameLabel constaints
+        //MARK: - Constraints
+        // nameLabel
         nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.leftDistanceTableView).isActive = true
         nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 35).isActive = true
-        // shtrihbutton constraints
+        // shtrihbutton
         shtrihButton.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 15).isActive = true
         shtrihButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.leftDistanceTableView).isActive = true
         shtrihButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
         shtrihButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        //// searchTF constaints
+        // searchTF
         searchTF.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor).isActive = true
         searchTF.heightAnchor.constraint(equalToConstant: 40).isActive = true
         searchTF.topAnchor.constraint(equalTo: shtrihButton.topAnchor).isActive = true

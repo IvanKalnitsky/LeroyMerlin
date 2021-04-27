@@ -48,8 +48,6 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         case 2:
             productCell.setProducts(cells: ProductModel.fetchViewedProduct())
             productCell.setCategoryName(category: Categories.viewed)
-            productCell.sizeToFit()
-            productCell.layoutIfNeeded()
             return productCell
         case 3:
             productCell.setProducts(cells: ProductModel.fetchLimitedProduct())

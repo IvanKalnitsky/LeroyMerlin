@@ -9,12 +9,11 @@ import UIKit
 
 class ThemesCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-  private let names = ThemeModel.names
+    private let names = ThemeModel.names
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = Constants.themeHorizontalSpacing
-        
         super.init(frame: .zero, collectionViewLayout: layout)
         backgroundColor = .white
         delegate = self
@@ -24,7 +23,7 @@ class ThemesCollectionView: UICollectionView, UICollectionViewDelegate, UICollec
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
     }
- 
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return names.count
     }

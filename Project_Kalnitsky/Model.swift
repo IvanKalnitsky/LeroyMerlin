@@ -60,3 +60,11 @@ struct Categories {
     static let limited: String = "Предложение ограничено"
     static let bestPrice: String = "Лучшая цена"
 }
+
+enum SectionTypes {
+    case search
+    case theme
+    case product1
+    case product2
+    case product3
+}

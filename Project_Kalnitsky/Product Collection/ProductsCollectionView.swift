@@ -15,15 +15,12 @@ class ProductsCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = Constants.productHorizontalSpacing
-        
         super.init(frame: .zero, collectionViewLayout: layout)
         backgroundColor = .white
         delegate = self
         dataSource = self
-        translatesAutoresizingMaskIntoConstraints = false
-        // Регистрируем ячейку
         register(ProductCollectionCell.self, forCellWithReuseIdentifier: ProductCollectionCell.reuseID)
-        
+        translatesAutoresizingMaskIntoConstraints = false
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
     }
@@ -38,18 +35,15 @@ class ProductsCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: ProductCollectionCell.reuseID, for: indexPath) as! ProductCollectionCell
-        cell.nameLabel.text = cells[indexPath.item].name
-        cell.mainImageView.image = cells[indexPath.item].image
-        cell.priceLabel.text = "\(Int(cells[indexPath.item].price))"
-        
+        cell.configure(nameLabelText: cells[indexPath.item].name, image: cells[indexPath.item].image, priceLabelText: "\(Int(cells[indexPath.item].price))")
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width:  Constants.productItemWidth ,height: Constants.productItemHeight)
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
